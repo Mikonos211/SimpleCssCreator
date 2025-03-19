@@ -7,181 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,900;1,400&display=swap" rel="stylesheet">
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins' ;
-        }
-        body{
-            padding-bottom: 2000px;
-        }
-
-        .header{
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50px;   
-            padding: 20px;
-            align-items: center;
-            margin: auto;
-            margin-bottom: 50px;
-            max-width: 1200px;
-            border-bottom: 1px solid lightgray;
-        }
-        
-        .header div{
-            cursor: pointer;
-        }
-        .left-header-selection h1{
-            font-size: 26px;
-            color: #FFCC00;
-        }
-        .right-header-selection{
-            display: flex;
-            flex-direction: row;
-            column-gap: 20px;
-
-        }
-        .right-header-selection div{
-            background-color: white;
-            border: none;
-            display: flex;
-            align-items: center;
-            column-gap: 5px;
-            cursor: pointer;
-            position: relative;
-            font-size: 13px;
-        }
-
-        .right-header-selection div::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            height: 1px;
-            width: 100%;
-            left: 0;  
-            background-color: black;
-            transition: transform 0.3s ease-in-out;
-            transform: scaleX(0); 
-        }
-
-        .right-header-selection div:hover::after {
-            transform: scaleX(1); 
-        }
-
-        .night-mode-button{
-            border: none;
-            background-color: white;
-            cursor: pointer;
-        }
-        .night-mode-button img{
-            align-items: center;
-        }
-
-       .menu{
-            display: none;
-       }
-
-       .grid-offer {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            max-width: 1200px;
-            width: auto;
-            place-items: center;
-            margin: auto;
-            column-gap: 15px;
-        }
-
-.grid-offer div {
-    width: 100%;
-    height: 100%;
-    background-color: lightcyan;
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.grid-offer div p {
-    font-size: 30px;
-    font-weight: bold;
-    color: white; /* Aby był widoczny na tle */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    opacity: 0; /* Początkowo niewidoczny */
-    transition: opacity 0.3s ease-in-out;
-}
-.grid-offer div:hover {
-    transform: scale(1.05);
-
-}
-
-.grid-offer div:hover img {
-    filter: blur(3px);
-    background-color: rgba(255, 0, 0, 0.3); 
-
-}
-
-.grid-offer div:hover p {
-    opacity: 1; /* Tekst staje się widoczny po najechaniu */
-    filter: blur(0px); /* Zapobiega rozmyciu tekstu */
-}
-
-.grid-offer div img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-
-        @media (max-width: 700px) {
-            .right-header-selection{
-                display: none;
-                } 
-            .menu{
-                display: block;
-                background-color: white;
-                border: none;
-                cursor: pointer;
-            }
-         }
-                   
-        .Title-info {
-            font-weight: bold;
-            display: flex;
-            flex-direction: column;
-            row-gap: 30px;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            text-align: center;
-            max-width: 600px;
-            margin: auto;
-            margin-bottom: 50px;
-        }
-        .Title-info-bottom{
-            font-size: 15px;
-            font-weight: 300;
-            color: grey;
-        }
-   
-    </style>
+    <link rel="stylesheet" href="styleMain.css">
+    <link rel="stylesheet" href="buttonCreator.css">
 </head>
 <body>
     <div class="header">
         <div class="left-header-selection">
-            <div>
-
-            </div>
-            <h1>SimpleCssCreator</h1>
+            <h1 id="SimpleCssCreatorMainButton">SimpleCssCreator</h1>
         </div>
         <div class="right-header-selection">
             <div>
@@ -191,10 +23,10 @@
                 Instruction
             </div>
             <div>
-                Login
+                Contact Us
             </div>
             <div>
-                Contact Us
+                Login
             </div>
             <button class="night-mode-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"></path></svg></button>
         </div>
@@ -212,24 +44,110 @@
             you to check Instruction 
         </div>
         <div class="offer-info">
-            Create website elements quickly and easily!        </div>
+            Create website elements quickly and easily!     
+        </div>
     </div>
 
     <div class="grid-offer">
-        <div>
+        <div class="action-button" id="ButtonCreator">
             <img  src="imgs/button.png" alt="">
              <p> Buttons </p>           
         </div>
-        <div>
+        <div class="action-button" id="LoginCreator">
            <img src="imgs/login.jpg" alt="">
            <p style="color: black;"> Logins </p>           
         </div>
-        <div>
+        <div class="action-button" id="SideBarCreator">
             <img src="imgs/sidebar.jpg" alt="">
-            <p> SideBar </p>           
+            <p> Sidebars </p>           
         </div>
     </div>
 
+    <div class="tonone" id="container">
+
+    </div>
+
+    <script>
+        const mainButton = document.getElementById("SimpleCssCreatorMainButton");
+        mainButton.addEventListener("click" , function(){
+            document.querySelector(".Title-info").style.display = "flex";
+            document.querySelector(".grid-offer").style.display = "grid";
+            document.querySelector(".tonone").style.display = "none";
+            
+        })
+        const container = document.getElementById("container");
+
+function PickTwojaStara(Id) {
+    document.querySelector(".Title-info").style.display = "none";
+    document.querySelector(".grid-offer").style.display = "none";
+
+    if(document.getElementById("container").children.length > 0){
+        document.getElementById("container").innerHTML= ""
+    }
+
+    if (!document.querySelector(`.${Id}class`)) {
+        if (Id === "ButtonCreator") {
+            const ButtonCreatorSelection = document.createElement("div");
+            ButtonCreatorSelection.className = Id + "class";
+            ButtonCreatorSelection.innerHTML = ` 
+                <div>
+                    <button> Your button </button>
+                </div>
+                <div class="ButtonCreator-options">
+                    Button Creator
+                </div>
+            `;
+            container.innerHTML = ""; 
+            container.appendChild(ButtonCreatorSelection);
+        }else if (Id === "LoginCreator") {
+            const ButtonCreatorSelection = document.createElement("div");
+            ButtonCreatorSelection.className = Id + "class";
+            ButtonCreatorSelection.innerHTML = ` 
+                <div>
+                    <button> Your button </button>
+                </div>
+                <div class="LoginCreator-options">
+                    Login Creator
+                </div>
+            `;
+            container.innerHTML = ""; 
+            container.appendChild(ButtonCreatorSelection);
+        }else if (Id === "SideBarCreator") {
+            const ButtonCreatorSelection = document.createElement("div");
+            ButtonCreatorSelection.className = Id + "class";
+            ButtonCreatorSelection.innerHTML = ` 
+                <div>
+                    <button> Your button </button>
+                </div>
+                <div class="SideBarCreator-options">
+                    SideBarCreator Creator
+                </div>
+            `;
+            container.innerHTML = ""; 
+            container.appendChild(ButtonCreatorSelection);
+        }
+    }
+    
+    document.querySelector(".tonone").style.display = "block";
+}
+
+const buttonButton = document.getElementById("ButtonCreator");
+const buttonLogin = document.getElementById("LoginCreator");
+const buttonSideBar = document.getElementById("SideBarCreator");
+
+buttonButton.addEventListener("click", function () {
+    PickTwojaStara(buttonButton.id);
+});
+buttonLogin.addEventListener("click", function () {
+    PickTwojaStara(buttonLogin.id);
+});
+buttonSideBar.addEventListener("click", function () {
+    PickTwojaStara(buttonSideBar.id);
+});
+
+
+        
+    </script>
   
     
 </body>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .number-input{
+            display: flex;
+            column-gap: 1px;
+        }
+        label{
+            margin-right: 5px;
+        }
+        #sizeInput{
+            width: 25px;
+            text-align: center;
+            background-color: grey;
+            border: 1px solid gray;
+            color: white;
+
+        }
+        .decrement{
+            border: 1px solid gray;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            text-align: center;
+
+        }
+        .increment{
+            border: 1px solid gray;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            text-align: center;
+
+        }
+        .number-input input::-webkit-outer-spin-button,
+        .number-input input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+       
+    </style>
+    
+</head>
+<body>
+    <div class="number-input">
+        <label>Size:</label>
+        <button class="decrement">−</button>
+        <input type="number" id="sizeInput" value="25" min="0" max="100">
+        <button class="increment">+</button>
+    </div>
+</body>
+</html>

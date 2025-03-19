@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+    /* tutaj jest ten przycisk */
+
+    .number-input{
+            display: flex;
+            column-gap: 1px;
+        }
+        label{
+            margin-right: 5px;
+        }
+        #sizeInput{
+            width: 25px;
+            text-align: center;
+            background-color: grey;
+            border: 1px solid gray;
+            color: white;
+
+        }
+        .decrement{
+            border: 1px solid gray;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            text-align: center;
+
+        }
+        .increment{
+            border: 1px solid gray;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            text-align: center;
+
+        }
+        .number-input input::-webkit-outer-spin-button,
+        .number-input input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* reszta */
+        .header{
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;   
+            padding: 20px;
+            align-items: center;
+            margin-bottom: 50px;
+
+        }
+        .header div{
+            cursor: pointer;
+        }
+        .left-header-selection h1{
+            font-size: 26px;
+            color: #FFCC00;
+        }
+        .right-header-selection{
+            display: flex;
+            flex-direction: row;
+            column-gap: 20px;
+        }
+        .Title-info {
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            text-align: center;
+            max-width: 600px;
+            margin: auto;
+            margin-bottom: 50px;
+        }
+        .Title-info-bottom{
+            font-size: 15px;
+            font-weight: nor;
+            color: grey;
+        }
+        .Button-creator-interFace{
+            display: flex;
+            row-gap: 60px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color:  #191919;
+        }
+        .button-to-copy{
+            margin-left: 50px;
+            margin-right: 50px;
+            background-color: #FFCC00;
+            padding: 20px 30px;
+            font-size: 16px;
+            border-radius: 15px;
+            display: flex;
+            margin-bottom: 120px;
+        }
+        .Button-creator-interFace-options{
+            flex: 1;
+            max-width: 300px;
+            height: 100%;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            background-color: #191919  ;
+            color: white;
+            align-items: center;
+            padding: 20px 40px;
+            row-gap: 20px;
+        }
+        .bold-italic-options{
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+        .to-flex-row{
+            display: flex;
+            justify-content: space-between;
+        }
+        .to-flex-column{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            row-gap: 5px;
+            margin-bottom: 10px;
+        }
+        .to-flex-column div{
+            padding: 12px 0;
+            font-size: 20px;
+
+        }
+        .to-flex-column input[type="text"] {
+            background-color: grey;
+            padding: 12px;
+            color: white;
+            border-radius: 10px;
+            border: 1px solid grey;
+            outline: none;
+            font-size: 16px;
+        }
+        input::placeholder{
+            color: white;
+            font-size: 16px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="left-header-selection">
+            <h1>SimpleCssCreator</h1>
+        </div>
+        <div class="right-header-selection">
+            <div>
+                Instruction
+            </div>
+            <div>
+                Create Button
+            </div>
+            <div>
+                Contact Us/Report Bug
+            </div>
+            <div>
+                NightMode
+            </div>
+        </div>
+    </div>
+    <div class="Title-info">
+        <div >
+            SimpleCssCreator - is a tool with u can create quick and easy 
+            css desines for smaller parts for your webside  
+        </div>
+        <div class="Title-info-bottom">
+            We belive that our interface is easy to understand 
+            but if u find it dificult to understand we suggest 
+            you to check Instruction 
+        </div>
+    </div>
+  
+    <div class="Button-creator-interFace">
+      
+        <div style="display: flex; justify-content: center; align-items: center; column-gap: 20px; width: 100%; margin: auto;">
+            <div class="Button-creator-interFace-options"> 
+                <div class="to-flex-column">
+                    <div>
+                        Button text
+                    </div>
+                    <input type="text" placeholder="Your button">
+                </div>
+                <div class="to-flex-column">
+                    <div>
+                        Font
+                    </div>
+                    <input type="text" placeholder="Arial">
+                </div>
+                <div class="bold-italic-options">
+                    <div class="to-flex-row">
+                        <div>
+                            Bold?
+                        </div>
+                        <input type="checkbox">
+                    </div>
+                    <div class="to-flex-row">
+                        <div>
+                            Italic?
+                        </div>
+                        <input type="checkbox">
+                    </div>
+                </div>
+                <div class="bold-italic-options">
+                    <div class="to-flex-row">
+                        <div class="number-input">
+                            <label>Size:</label>
+                            <button class="decrement">−</button>
+                            <input type="number" id="sizeInput" value="25" min="0" max="100">
+                            <button class="increment">+</button>
+                        </div>
+                    </div>  
+                    <div class="to-flex-row">
+                        <div>
+                            Color:
+                        </div>
+                        <input type="checkbox">
+                    </div>   
+                </div>
+                <div class="to-flex-column">
+                    <div>
+                        Button Size
+                    </div>
+                    <div class="number-input">
+                        <label>Vertical Padding:</label>
+                        <button class="decrement">−</button>
+                        <input type="number" id="sizeInput" value="25" min="0" max="100">
+                        <button class="increment">+</button>
+                    </div>
+                    <div class="number-input">
+                        <label>Horizontal Padding:</label>
+                        <button class="decrement">−</button>
+                        <input type="number" id="sizeInput" value="25" min="0" max="100">
+                        <button class="increment">+</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <Button class="button-to-copy"> Your Button </Button>
+            </div>
+            <div class="Button-creator-interFace-options"> 
+                <div class="to-flex-column">
+                    <div>
+                        Border Button
+                    </div>
+                    <input type="text" placeholder="Custom">
+                    <div class="number-input">
+                        <label>Horizontal Padding:</label>
+                        <button class="decrement">−</button>
+                        <input type="number" id="sizeInput" value="25" min="0" max="100">
+                        <button class="increment">+</button>
+                    </div>
+                </div>
+                <div class="to-flex-column">
+                    <div>
+                        Background
+                    </div>
+                    <input type="text" placeholder="Single Color">
+                </div>
+                <div class="bold-italic-options">
+                    <div class="to-flex-row">
+                        <div>
+                            Bold?
+                        </div>
+                        <input type="checkbox">
+                    </div>
+                    <div class="to-flex-row">
+                        <div>
+                            Italic?
+                        </div>
+                        <input type="checkbox">
+                    </div>
+                </div>
+                <div class="bold-italic-options">
+                    <div class="to-flex-row">
+                        <div>
+                            Color:
+                        </div>
+                        <input type="checkbox">
+                    </div>   
+                </div>
+                <div class="to-flex-column">
+                    <div>
+                        Button text
+                    </div>
+                    <input type="text" placeholder="Your button">
+                </div>
+            </div>
+                
+        </div>
+       
+        </div>
+
+    </div>
+</body>
+</html>

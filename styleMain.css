@@ -1,3 +1,14 @@
+
+:root{
+    --BaseBackground-color: white;
+    --basFont-color:  black;
+    --extraFont-color: grey;
+}
+.darkmode{
+    --BaseBackground-color: #191919;
+    --basFont-color: #FFCC00;
+    --extraFont-color: grey;
+}
 *{
     margin: 0;
     padding: 0;
@@ -5,13 +16,14 @@
 }
 body{
     padding-top: 120px;
-    padding-bottom: 2000px;
+    background-color: var(--BaseBackground-color);
 }
 
 .header{
     display: flex;
     justify-content: space-between;
-    position: fixed;            top: 0;
+    position: fixed;           
+    top: 0;
     left: 0;
     right: 0;
     height: 50px;   
@@ -21,7 +33,7 @@ body{
     max-width: 1200px;
     border-bottom: 1px solid lightgray;
     margin-bottom: 100px;
-    background-color: white;
+    background-color: var(--BaseBackground-color);
     z-index: 1;
 }
 
@@ -39,7 +51,6 @@ body{
 
 }
 .right-header-selection div{
-    background-color: white;
     border: none;
     display: flex;
     align-items: center;
@@ -47,6 +58,7 @@ body{
     cursor: pointer;
     position: relative;
     font-size: 13px;
+    color: var(--basFont-color);
 }
 
 .right-header-selection div::after {
@@ -56,7 +68,7 @@ body{
     height: 1px;
     width: 100%;
     left: 0;  
-    background-color: black;
+    background-color: var(--basFont-color);
     transition: transform 0.3s ease-in-out;
     transform: scaleX(0); 
 }
@@ -67,7 +79,7 @@ body{
 
 .night-mode-button{
     border: none;
-    background-color: white;
+    background-color: var(--BaseBackground-color);
     cursor: pointer;
 }
 .night-mode-button img{
@@ -93,7 +105,6 @@ body{
 .grid-offer div {
 width: 100%;
 height: 100%;
-background-color: lightcyan;
 transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out, background-color 0.3s ease-in-out;
 position: relative;
 overflow: hidden;
@@ -119,7 +130,6 @@ transform: scale(1.05);
 
 .grid-offer div:hover img {
 filter: blur(3px);
-background-color: rgba(255, 0, 0, 0.3); 
 
 }
 
@@ -146,11 +156,16 @@ object-fit: cover;
         border: none;
         cursor: pointer;
     }
+    .grid-offer {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        row-gap: 20px;
+    }
  }
            
 .Title-info {
     z-index: 0;
-
+    color: var(--basFont-color);
     font-weight: bold;
     display: flex;
     flex-direction: column;
@@ -166,5 +181,5 @@ object-fit: cover;
 .Title-info-bottom{
     font-size: 15px;
     font-weight: 300;
-    color: grey;
+    color: var(--extraFont-color);
 }

@@ -10,25 +10,25 @@
     <link rel="stylesheet" href="styleMain.css">
     <link rel="stylesheet" href="buttonCreator.css">
 </head>
-<body>
+<body >
     <div class="header">
         <div class="left-header-selection">
             <h1 id="SimpleCssCreatorMainButton">SimpleCssCreator</h1>
         </div>
         <div class="right-header-selection">
-            <div>
+            <div class="right-div">
                 About us
             </div>
-            <div>
+            <div class="right-div">
                 Instruction
             </div>
-            <div>
+            <div class="right-div">
                 Contact Us
             </div>
-            <div>
+            <div class="right-div">
                 Login
             </div>
-            <button class="night-mode-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"></path></svg></button>
+            <button id="nightmod"  class="night-mode-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"></path></svg></button>
         </div>
         <button class="menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg> </button>
     </div>
@@ -67,87 +67,7 @@
 
     </div>
 
-    <script>
-        const mainButton = document.getElementById("SimpleCssCreatorMainButton");
-        mainButton.addEventListener("click" , function(){
-            document.querySelector(".Title-info").style.display = "flex";
-            document.querySelector(".grid-offer").style.display = "grid";
-            document.querySelector(".tonone").style.display = "none";
-            
-        })
-        const container = document.getElementById("container");
-
-function PickTwojaStara(Id) {
-    document.querySelector(".Title-info").style.display = "none";
-    document.querySelector(".grid-offer").style.display = "none";
-
-    if(document.getElementById("container").children.length > 0){
-        document.getElementById("container").innerHTML= ""
-    }
-
-    if (!document.querySelector(`.${Id}class`)) {
-        if (Id === "ButtonCreator") {
-            const ButtonCreatorSelection = document.createElement("div");
-            ButtonCreatorSelection.className = Id + "class";
-            ButtonCreatorSelection.innerHTML = ` 
-                <div>
-                    <button> Your button </button>
-                </div>
-                <div class="ButtonCreator-options">
-                    Button Creator
-                </div>
-            `;
-            container.innerHTML = ""; 
-            container.appendChild(ButtonCreatorSelection);
-        }else if (Id === "LoginCreator") {
-            const ButtonCreatorSelection = document.createElement("div");
-            ButtonCreatorSelection.className = Id + "class";
-            ButtonCreatorSelection.innerHTML = ` 
-                <div>
-                    <button> Your button </button>
-                </div>
-                <div class="LoginCreator-options">
-                    Login Creator
-                </div>
-            `;
-            container.innerHTML = ""; 
-            container.appendChild(ButtonCreatorSelection);
-        }else if (Id === "SideBarCreator") {
-            const ButtonCreatorSelection = document.createElement("div");
-            ButtonCreatorSelection.className = Id + "class";
-            ButtonCreatorSelection.innerHTML = ` 
-                <div>
-                    <button> Your button </button>
-                </div>
-                <div class="SideBarCreator-options">
-                    SideBarCreator Creator
-                </div>
-            `;
-            container.innerHTML = ""; 
-            container.appendChild(ButtonCreatorSelection);
-        }
-    }
-    
-    document.querySelector(".tonone").style.display = "block";
-}
-
-const buttonButton = document.getElementById("ButtonCreator");
-const buttonLogin = document.getElementById("LoginCreator");
-const buttonSideBar = document.getElementById("SideBarCreator");
-
-buttonButton.addEventListener("click", function () {
-    PickTwojaStara(buttonButton.id);
-});
-buttonLogin.addEventListener("click", function () {
-    PickTwojaStara(buttonLogin.id);
-});
-buttonSideBar.addEventListener("click", function () {
-    PickTwojaStara(buttonSideBar.id);
-});
-
-
-        
-    </script>
+    <script src="script.js"></script>
   
     
 </body>

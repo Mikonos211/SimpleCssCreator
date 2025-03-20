@@ -1,0 +1,23 @@
+Dobra to co ja widzę w takim razie to tak
+dla tekstu 
+-Text
+-rodzaj czcionki 
+-Grubosc czcionki
+-CZy bedzie to italic
+-Kolor czcionki
+-shadow-Box cionki
+-dekoracje tekstu(np podkreslenie)
+
+dla przycisku 
+-Padding
+-szerokosc
+-wysokosc
+-Shadowbox
+-backgroudcolor
+-dodaniemozliwosci gradienu do backgrodu
+-border
+-border-radius
+-outline
+
+animacje
+-roznego rodzaje hovery focusy czy activr

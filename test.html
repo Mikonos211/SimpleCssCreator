@@ -9,103 +9,81 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,900;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styleMain.css">
     <style>
-        .ButtonCreator , .LoginCreatorclass{
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main-grid{
             display: grid;
-            grid-template-columns: 200px 1fr;
-            width: 1200px;
-            height: 600px;
+            grid-template-columns: 1fr 1fr 1fr;
+            max-width: 1200px;
             place-items: center;
             margin: auto;
+            column-gap: 30px;
         }
-        .ButtonCreator-options{
+        .left-part, .right-part{
+            display: grid;
+            row-gap: 40px;
+            grid-template-rows: 400px 600px;
             width: 100%;
-            height: 100%;
+
+        }
+
+        .left-part div, .right-part div{
+        background-color: lightblue;
+        }
+        .middle-part{
+            display: grid;
+            grid-template-rows: 600px 400px;
+            row-gap: 40px;
+            width: 100%;
+
+
+        }
+        .middle-part div{
             background-color: lightblue;
         }
-        .LoginCreator-options{
-            width: 100%;
-            height: 100%;
-            background-color: lightcoral;
-        }
+
+      
+  
        
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="left-header-selection">
-            <h1 id="SimpleCssCreatorMainButton">SimpleCssCreator</h1>
-        </div>
-        <div class="right-header-selection">
-            <div>
-                About us
-            </div>
-            <div>
-                Instruction
-            </div>
-            <div>
-                Contact Us
-            </div>
-            <div>
-                Login
-            </div>
-            <button class="night-mode-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"></path></svg></button>
-        </div>
-        <button class="menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg> </button>
-    </div>
+   
+    <div class="main-grid">
 
-    <div class="LoginCreatorclass">
-        <div>
-            <button> Your button </button>
-        </div>
-        <div class="LoginCreator-options">
-            tak dla testu
+        <div class="left-part">
+            <div>
+                text edits
+            </div>
+            <div>
+                animations
+            </div>
         </div>
 
+        <div class="middle-part">
+            <div>
+                button
+            </div>
+            <div>
+                css
+            </div>
+        </div>
+
+        <div class="right-part">
+            <div>
+                sizeoptions
+            </div>
+            <div>
+                os jeszcze
+            </div>
+
+        </div>
     </div>
- 
   
-
-    <script>
-        const mainButton = document.getElementById("SimpleCssCreatorMainButton");
-        mainButton.addEventListener("click" , function(){
-            
-        })
-
-
-
-        const buttonButton = document.getElementById("ButtonID");
-        buttonButton.addEventListener("click" , function(){
-            
-        })
-        // buttonButton.addEventListener("click" , function(){
-
-        //     document.querySelector(".Title-info").style.display = "none";
-        //     document.querySelector(".grid-offer").style.display = "none";
-
-
-        //     // if(document.querySelector(".ButtonCreator").children.length > 0){
-        //     //     currentDiv.innerHTML = "";
-        //     // }
-            
-        //     if(document.querySelector(".ButtonCreator")){
-        //         document.querySelector(".tonone").style.display = "block";
-        //     }else{
-        //         const ButtonCreatorSelection = document.createElement("div");
-        //         ButtonCreatorSelection.className = "ButtonCreator";
-        //         ButtonCreatorSelection.innerHTML = ` 
-        //                             <div>
-        //                                 <button> Your button </button>
-        //                                 </div>
-        //                                 <div class="ButtonCreator-options">
-        //                                     tak dla testu
-        //                             </div>
-        //     `
-        //     container.appendChild(ButtonCreatorSelection)
-        //      }
-
-         
-        // })
-    </script>
+ 
+    
   
     
 </body>

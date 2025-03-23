@@ -7,12 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,900;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styleMain.css">
+    <link rel="stylesheet" href="/Styles/MainStyles/styleMain.css">
+    <link rel="stylesheet" href="buttonCreator.css">
     <style>
         *{
             margin: 0;
             padding: 0;
+
         }
+
         .main-grid{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -21,70 +24,273 @@
             margin: auto;
             column-gap: 30px;
         }
+    
         .left-part, .right-part{
             display: grid;
             row-gap: 40px;
             grid-template-rows: 400px 600px;
+            max-width: 380px;
             width: 100%;
+        }
 
+        .left-part-inside, .midde-inside , .right-part-inside{
+            border-radius: 5px;
+            border: 1px solid gray;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
         }
 
         .left-part div, .right-part div{
-        background-color: lightblue;
+            padding: 10px;
         }
+
+        .left-part-inside{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left-part-inside label {
+            display: flex;
+            flex-direction: column;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .left-part-inside input[type="text"] {
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-top: 4px;
+            font-size: 14px;
+            outline: none;
+        }
+        .font-style-options {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+       
+
+        .palette {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 5px;
+            padding: 20px;
+            }
+
+        .color-box {
+            width: auto;
+            height: auto;
+            border: 1px solid #ccc;
+            }
+
         .middle-part{
             display: grid;
-            grid-template-rows: 600px 400px;
+            grid-template-rows: 500px 500px;
             row-gap: 40px;
             width: 100%;
-
-
-        }
-        .middle-part div{
-            background-color: lightblue;
         }
 
+        .midde-inside{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .right-part-inside{
+            display: flex;
+            flex-direction: column;
+            justify-content: start ;
+            align-items: center;
+            max-width: 380px;
+       }
+       .Chose-size{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+       }
+
+       select{
+            padding: 8px 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-top: 4px;
+            font-size: 14px;
+            outline: none;
+        }
+        
+
+       .di-for-inputSizeValues{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 100%;
+        }
       
-  
-       
+
+        .size-control-row {
+            display: flex;
+        }
+
+        .size-opiton-div {
+            flex: 1;
+            display: flex;
+            height: 30px;
+        }
+
+        .size-opiton-div input {
+            width: 100%;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-left: none;
+            border-right: none;
+            outline: none;
+        }
+
+        .decrese-button, .increse-button {
+            background-color: #eee;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            width: 30px;
+            transition: background-color 0.2s ease;
+        }
+            
+             
     </style>
 </head>
 <body>
    
     <div class="main-grid">
-
         <div class="left-part">
-            <div>
-                text edits
-            </div>
-            <div>
+            <div class="left-part-inside">
+                <label>
+                  Input text
+                  <input id="TextToButton" type="text" placeholder="Wpisz tekst">
+                </label>
+              
+                <label>
+                  Font Family
+                  <input type="text" placeholder="np. Arial">
+                </label>
+              
+                <div class="font-style-options" >
+                  <label style="display: flex; flex-direction: row; align-items: center; gap: 6px;">
+                    <span>Bold?</span>
+                    <input type="checkbox">
+                  </label>
+                  <label style="display: flex; flex-direction: row; align-items: center; gap: 6px;">
+                    <span>Italic?</span>
+                    <input type="checkbox"> 
+                  </label>
+                </div>
+              
+                <label>
+                  Font Color
+                  <div class="palette">
+                   
+                  </div>
+                </label>
+              </div>
+              
+            <div class="left-part-inside">
                 animations
             </div>
         </div>
 
         <div class="middle-part">
-            <div>
-                button
+            <div class="midde-inside">
+                <button id="Button-to-copy">Your Button</button>
             </div>
-            <div>
+            <div class="midde-inside">
                 css
             </div>
         </div>
 
         <div class="right-part">
-            <div>
-                sizeoptions
+            <div class="right-part-inside">
+                <div class="Chose-size">
+                    <label for="">Size By</label>
+                    <select name="" id="">
+                    <option> Padding </option>
+                    <option> Custom value </option>
+                </select>
+                </div>
+                <label>Padding: Vertical & Horizontal</label>
+
+                <div class="di-for-inputSizeValues">
+                    <div class="size-control-row">
+                      <div class="size-opiton-div">
+                        <button class="decrese-button">&lt;</button>
+                        <input type="number" value="5">
+                        <button class="increse-button">&gt;</button>
+                      </div>
+                      <div class="size-opiton-div">
+                        <button class="decrese-button">&lt;</button>
+                        <input type="number" value="5">
+                        <button class="increse-button">&gt;</button>
+                      </div>
+                    </div>
+                </div>
+
+                <label for=""> Border </label>
+                <div class="di-for-inputSizeValues">
+                   
+                </div>
+                <label>
+                    Border-color
+                    
+                  </label>
             </div>
-            <div>
+
+            <div class="right-part-inside">
                 os jeszcze
             </div>
 
         </div>
     </div>
-  
- 
-    
-  
-    
+    <script>
+        const colors = [
+               "#000000", "#333333", "#666666", "#999999", "#cccccc", "#ffffff", "#ff0000", "#ff8000", "#ffff00", "#00ff00", 
+                "#00ffff", "#0000ff", "#ff00ff", "#ffcccc", "#ffeecc", "#ffffcc", "#ccffcc", "#ccffff", "#ccccff", "#ffccff",
+                "#ff9999", "#ffcc99", "#ffff99", "#99ff99", "#99ffff", "#9999ff", "#ff99ff", "#ff6666", "#ffb366", "#ffff66", "#66ff66",
+                "#66ffff", "#6666ff", "#ff66ff", "#ff3333", "#ff9933", "#ffcc33", "#33ff33", "#33ffff", "#3333ff", "#ff33ff",
+                "#cc0000", "#cc6600", "#cc9900", "#009900", "#009999", "#000099", "#990099", "#660000", "#663300", "#666600",
+                "#006600", "#006666", "#000066", "#660066"
+            ];
+        const palette = document.querySelector(".palette");
+        colors.forEach(color => {
+            let div = document.createElement("div");
+            div.className = "color-box";
+            div.style.backgroundColor = color;
+             palette.appendChild(div);
+            });
+        const inputButtonTextField = document.getElementById("TextToButton");
+        const buttonToCopy = document.getElementById("Button-to-copy");
+
+        inputButtonTextField.addEventListener('input', function () {
+            buttonToCopy.textContent = inputButtonTextField.value || "Your Button"; // domyślny tekst, gdy puste
+        });
+
+    </script>
 </body>
 </html>
+<!--     <script>
+                            const colors = [
+                                "#000000", "#333333", "#666666", "#999999", "#cccccc", "#ffffff", "#ff0000", "#ff8000", "#ffff00", "#00ff00", 
+                                "#00ffff", "#0000ff", "#ff00ff", "#ffcccc", "#ffeecc", "#ffffcc", "#ccffcc", "#ccffff", "#ccccff", "#ffccff",
+                                "#ff9999", "#ffcc99", "#ffff99", "#99ff99", "#99ffff", "#9999ff", "#ff99ff", "#ff6666", "#ffb366", "#ffff66", "#66ff66",
+                                "#66ffff", "#6666ff", "#ff66ff", "#ff3333", "#ff9933", "#ffcc33", "#33ff33", "#33ffff", "#3333ff", "#ff33ff",
+                                "#cc0000", "#cc6600", "#cc9900", "#009900", "#009999", "#000099", "#990099", "#660000", "#663300", "#666600",
+                                "#006600", "#006666", "#000066", "#660066"
+                            ];
+                            const palette = document.querySelector(".palette");
+                            colors.forEach(color => {
+                                let div = document.createElement("div");
+                                div.className = "color-box";
+                                div.style.backgroundColor = color;
+                                palette.appendChild(div);
+                            });
+                        </script> -->

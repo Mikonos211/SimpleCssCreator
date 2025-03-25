@@ -26,18 +26,94 @@ input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+#Button-to-copy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
     </style>
 </head>
 <body>
   <div class="size-opiton-div">
+    <button class="decrese-button"><</button>
+    <input class="valueinput" type="number" value="5" id="horizontalPadding">
+    <button class="increse-button">></button>
+
     <button class="decrese-button">
         <
     </button>
-    <input type="number" step="0.01">
+    <input class="valueinput" type="number" value="5" id="verticalPadding">
     <button class="increse-button">
         >
     </button>
+
+    <button class="decrese-button"><</button>
+    <input class="valueinput" type="number" value="5" id="BorderRadius">
+    <button class="increse-button">></button>
+
+    <button id="Button-to-copy"> to copy </button>
   </div>
-</body>
+  <script>
+        const buttonToCopy = document.getElementById("Button-to-copy");
+        const descButtons = document.querySelectorAll(".decrese-button");
+        const incButtons = document.querySelectorAll(".increse-button");
+        const inputs = document.querySelectorAll(".valueinput");
+        const horizontalPaddingInput = document.getElementById("horizontalPadding");
+        const verticalPadding = document.getElementById("verticalPadding");
+        const BorderRadiusInput = document.getElementById("BorderRadius")
+
+        function IncreaseBorderRadius(){
+            const radius = BorderRadiusInput.value + "px";
+            buttonToCopy.style.borderRadius = radius;
+        }
+
+        function IncreseHotisontalPadding() {
+            const padding = horizontalPaddingInput.value + "px";
+            buttonToCopy.style.paddingLeft = padding;
+            buttonToCopy.style.paddingRight = padding;
+        }
+
+        function IncreseVerticalPadding() {
+            const padding = verticalPadding.value + "px";
+            buttonToCopy.style.paddingTop = padding;
+            buttonToCopy.style.paddingBottom = padding;
+        }
+
+        descButtons.forEach((button, index) => {
+            button.addEventListener("click", function () {
+                let valSize = +inputs[index].value;
+                if (valSize > 0) {
+                    valSize -= 1;
+                    inputs[index].value = valSize;
+                    if (inputs[index] === horizontalPaddingInput) {
+                        IncreseHotisontalPadding();
+                    } else if (inputs[index] === verticalPadding){
+                        IncreseVerticalPadding();
+                    } else if (inputs[index] === BorderRadiusInput){
+                        IncreaseBorderRadius();
+                    }
+                }
+            });
+        });
+
+        incButtons.forEach((button, index) => {
+            button.addEventListener("click", function () {
+                let valSize = +inputs[index].value;
+                valSize += 1;
+                inputs[index].value = valSize;
+                if (inputs[index] === horizontalPaddingInput) {
+                    IncreseHotisontalPadding();
+                }else if (inputs[index] === verticalPadding){
+                        IncreseVerticalPadding();
+                    }else if (inputs[index] === BorderRadiusInput){
+                        IncreaseBorderRadius();
+                    }
+            });
+        });
+
+        horizontalPaddingInput.addEventListener("input", IncreseHotisontalPadding);
+        verticalPadding.addEventListener("input", IncreseVerticalPadding)
+        BorderRadiusInput.addEventListener("input", IncreaseBorderRadius);
+</script></body>
 </html>

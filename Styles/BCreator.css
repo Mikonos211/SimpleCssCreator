@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1200px;
+    place-items: center;
+    margin: auto;
+    column-gap: 30px;
+}
+
+.left-part, .right-part{
+    display: grid;
+    row-gap: 40px;
+    grid-template-rows: 400px 600px;
+    max-width: 380px;
+    width: 100%;
+}
+
+.left-part-inside, .midde-inside , .right-part-inside{
+    border-radius: 5px;
+    border: 1px solid gray;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.left-part div{
+    padding: 10px;
+}
+
+.left-part-inside{
+    display: flex;
+    flex-direction: column;
+}
+
+.left-part-inside label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #333;
+}
+
+.left-part-inside input[type="text"] {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 4px;
+    font-size: 14px;
+    outline: none;
+}
+.font-style-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+.palette  {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+    padding: 20px;
+}
+
+.color-box {
+    width: auto;
+    height: auto;
+    border: 1px solid #ccc;
+    cursor: pointer;
+
+}
+
+.middle-part{
+    display: grid;
+    grid-template-rows: 500px 500px;
+    row-gap: 40px;
+    width: 100%;
+}
+
+.midde-inside{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Button-to-copy{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: white;
+    border-color: black;
+    color: black;
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* prawy gorny */
+.right-part-inside {
+    font-size: 14px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: stretch;
+    max-width: 380px;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.Chose-size{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+select{
+    padding: 8px 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+
+.di-for-inputSizeValues{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+}
+
+.palette-button{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+    padding: 20px;
+    height: 150px;
+  
+  
+}
+.color-box-forBackground{
+    width: auto;
+    height: auto;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.size-control-row {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.size-opiton-div {
+    flex: 1;
+    display: flex;
+    height: 30px;
+}
+
+.size-opiton-div input {
+    width: 100%;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+
+.decrese-button, .increse-button {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    width: 30px;
+    transition: background-color 0.2s ease;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}

@@ -22,14 +22,16 @@
             place-items: center;
             margin: auto;
             column-gap: 30px;
+            align-items: start;
         }
     
         .left-part, .right-part{
             display: grid;
             row-gap: 40px;
-            grid-template-rows: 400px 600px;
+            grid-template-rows: 400px 450px;
             max-width: 380px;
             width: 100%;
+            
         }
 
         .left-part-inside, .midde-inside , .right-part-inside{
@@ -91,7 +93,7 @@
 
         .middle-part{
             display: grid;
-            grid-template-rows: 500px 500px;
+            grid-template-rows: 500px 350px;
             row-gap: 40px;
             width: 100%;
         }
@@ -285,7 +287,7 @@
               </div>
               
             <div class="left-part-inside">
-                animations
+                animations(moze kiedyś XD)
             </div>
         </div>
 
@@ -310,7 +312,7 @@
                 
                 </div>
                 <div style="width: 90%;">
-                    <button style="width: 100%; padding: 10px; font-size: 15px; border: none; background-color: #1976d2; color: white; border-radius: 6px; cursor: pointer;">
+                    <button id="CoppyCss" style="width: 100%; padding: 10px; font-size: 15px; border: none; background-color: #1976d2; color: white; border-radius: 6px; cursor: pointer;">
                         Copy
                       </button>
                     </div>
@@ -479,6 +481,7 @@
             });
 
             shadowPallete.appendChild(divshadowcolor);
+
         });
 
 
@@ -669,6 +672,23 @@
                 `font-style: ${computed.fontStyle};\n`+
                 `box-shadow: ${computed.boxShadow};\n`;
         }
+
+        const CopyCodeButton = document.getElementById("CoppyCss");
+
+        CopyCodeButton.addEventListener("click", function() {
+            const copyText = document.getElementById("styleDisplay").textContent;  
+
+            const textarea = document.createElement('textarea');
+            textarea.value = copyText;  
+            document.body.appendChild(textarea);  
+
+            textarea.select();  
+            document.execCommand('copy');  
+
+            document.body.removeChild(textarea); 
+
+        });
+
     </script>
     
 </body>
